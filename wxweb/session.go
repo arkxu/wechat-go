@@ -69,16 +69,20 @@ var (
 
 // Session: wechat bot session
 type Session struct {
-	WxWebCommon     *Common
-	WxWebXcg        *XmlConfig
-	Cookies         []*http.Cookie
-	SynKeyList      *SyncKeyList
-	Bot             *User
+	WxWebCommon *Common
+	WxWebXcg    *XmlConfig
+	Cookies     []*http.Cookie
+	SynKeyList  *SyncKeyList
+	Bot         *User
+	QrcodePath  string //qrcode path
+	QrcodeUUID  string //uuid
+	CreateTime  int64
+	sessionExt
+}
+
+type sessionExt struct {
 	Cm              *ContactManager
-	QrcodePath      string //qrcode path
-	QrcodeUUID      string //uuid
 	HandlerRegister *HandlerRegister
-	CreateTime      int64
 }
 
 // CreateSession: create wechat bot session
@@ -167,6 +171,18 @@ loop1:
 // LoginAndServe: login wechat web and enter message receiving loop
 func (s *Session) LoginAndServe(useCache bool) error {
 
+	if err := s.Login(useCache); err != nil {
+		return err
+	}
+
+	if err := s.Serve(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (s *Session) Login(useCache bool) error {
+
 	var (
 		err error
 	)
@@ -200,6 +216,7 @@ func (s *Session) LoginAndServe(useCache bool) error {
 	if err != nil {
 		return err
 	}
+
 	s.Bot, _ = GetUserInfoFromJc(jc)
 	logs.Info(s.Bot)
 	ret, err := WebWxStatusNotify(s.WxWebCommon, s.WxWebXcg, s.Bot)
@@ -222,14 +239,10 @@ func (s *Session) LoginAndServe(useCache bool) error {
 
 	// for v2
 	s.Cm.AddUser(s.Bot)
-
-	if err := s.serve(); err != nil {
-		return err
-	}
 	return nil
 }
 
-func (s *Session) serve() error {
+func (s *Session) Serve() error {
 	msg := make(chan []byte, 1000)
 	// syncheck
 	errChan := make(chan error)
@@ -244,6 +257,7 @@ func (s *Session) serve() error {
 		}
 	}
 }
+
 func (s *Session) producer(msg chan []byte, errChan chan error) {
 	logs.Info("entering synccheck loop")
 loop1:

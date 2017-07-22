@@ -1,0 +1,135 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/astaxie/beego/logs",
+			"repository": "https://github.com/astaxie/beego",
+			"vcs": "git",
+			"revision": "d96289a81bf67728cff7a19b067aaecc65a62ec6",
+			"branch": "master",
+			"path": "/logs",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/belogik/goes",
+			"repository": "https://github.com/belogik/goes",
+			"vcs": "git",
+			"revision": "e54d722c3aff588e4c737fe11c07359019240824",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/cheggaaa/pb",
+			"repository": "https://github.com/cheggaaa/pb",
+			"vcs": "git",
+			"revision": "f6ccf2184de4dd34495277e38dc19b6e7fbe0ea2",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/cloudflare/golz4",
+			"repository": "https://github.com/cloudflare/golz4",
+			"vcs": "git",
+			"revision": "ef862a3cdc58a6f1fee4e3af3d44fbe279194cde",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/gogo/protobuf/proto",
+			"repository": "https://github.com/gogo/protobuf",
+			"vcs": "git",
+			"revision": "7b6c6391c4ff245962047fc1e2c6e08b1cdfa0e8",
+			"branch": "master",
+			"path": "/proto",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/gogo/protobuf/sortkeys",
+			"repository": "https://github.com/gogo/protobuf",
+			"vcs": "git",
+			"revision": "7b6c6391c4ff245962047fc1e2c6e08b1cdfa0e8",
+			"branch": "master",
+			"path": "sortkeys",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/gogo/protobuf/types",
+			"repository": "https://github.com/gogo/protobuf",
+			"vcs": "git",
+			"revision": "7b6c6391c4ff245962047fc1e2c6e08b1cdfa0e8",
+			"branch": "master",
+			"path": "types",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mattn/go-runewidth",
+			"repository": "https://github.com/mattn/go-runewidth",
+			"vcs": "git",
+			"revision": "97311d9f7767e3d6f422ea06661bc2c7a19e8a5d",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mdp/qrterminal",
+			"repository": "https://github.com/mdp/qrterminal",
+			"vcs": "git",
+			"revision": "bd37d7b62c3e19529343c3426e649b300d3102f8",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mdp/rsc/gf256",
+			"repository": "https://github.com/mdp/rsc",
+			"vcs": "git",
+			"revision": "90f07065088deccf50b28eb37c93dad3078c0f3c",
+			"branch": "master",
+			"path": "gf256",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mdp/rsc/qr",
+			"repository": "https://github.com/mdp/rsc",
+			"vcs": "git",
+			"revision": "90f07065088deccf50b28eb37c93dad3078c0f3c",
+			"branch": "master",
+			"path": "/qr",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/songtianyi/rrframework/config",
+			"repository": "https://github.com/songtianyi/rrframework",
+			"vcs": "git",
+			"revision": "feb983ace8e14330bba25f268d3c4a235a51b6c2",
+			"branch": "master",
+			"path": "/config",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/songtianyi/rrframework/logs",
+			"repository": "https://github.com/songtianyi/rrframework",
+			"vcs": "git",
+			"revision": "feb983ace8e14330bba25f268d3c4a235a51b6c2",
+			"branch": "master",
+			"path": "logs",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/songtianyi/rrframework/storage",
+			"repository": "https://github.com/songtianyi/rrframework",
+			"vcs": "git",
+			"revision": "feb983ace8e14330bba25f268d3c4a235a51b6c2",
+			"branch": "master",
+			"path": "/storage",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/net/websocket",
+			"repository": "https://go.googlesource.com/net",
+			"vcs": "git",
+			"revision": "ab5485076ff3407ad2d02db054635913f017b0ed",
+			"branch": "master",
+			"path": "/websocket",
+			"notests": true
+		}
+	]
+}

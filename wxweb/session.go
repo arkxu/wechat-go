@@ -277,8 +277,8 @@ loop1:
 					logs.Error(err)
 				}
 			} else if sel != 0 && sel != 7 {
-				// errChan <- fmt.Errorf("session down, sel %d", sel)
-				// break loop1
+				errChan <- fmt.Errorf("session down, sel %d", sel)
+				break loop1
 			}
 		} else if ret == 1101 {
 			errChan <- nil

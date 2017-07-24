@@ -30,7 +30,6 @@ import (
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
-	"github.com/songtianyi/rrframework/config"
 	"io"
 	"io/ioutil"
 	"mime/multipart"
@@ -42,6 +41,8 @@ import (
 	"strings"
 	"sync/atomic"
 	"time"
+
+	"github.com/songtianyi/rrframework/config"
 )
 
 // JsLogin: jslogin api
@@ -564,7 +565,6 @@ func WebWxGetMsgImg(common *Common, ce *XmlConfig, cookies []*http.Cookie, msgId
 	km := url.Values{}
 	km.Add("MsgID", msgId)
 	km.Add("skey", ce.Skey)
-	km.Add("type", "slave")
 
 	uri := common.CgiUrl + "/webwxgetmsgimg?" + km.Encode()
 	req, err := http.NewRequest("GET", uri, nil)

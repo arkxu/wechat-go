@@ -270,15 +270,9 @@ loop1:
 		}
 		if ret == 0 {
 			// check success
-			if sel == 2 {
-				// new message
-				err := WebWxSync(s.WxWebCommon, s.WxWebXcg, s.Cookies, msg, s.SynKeyList)
-				if err != nil {
-					logs.Error(err)
-				}
-			} else if sel != 0 && sel != 7 {
-				errChan <- fmt.Errorf("session down, sel %d", sel)
-				break loop1
+			err := WebWxSync(s.WxWebCommon, s.WxWebXcg, s.Cookies, msg, s.SynKeyList)
+			if err != nil {
+				logs.Error(err)
 			}
 		} else if ret == 1101 {
 			errChan <- nil
